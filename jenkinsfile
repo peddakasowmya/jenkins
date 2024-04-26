@@ -25,6 +25,7 @@ pipeline {
                 sh "echo Welcome world! We will do CICD tomorrow"
                 sh "echo ${ENV_URL}"
                 sh "env"
+                sh "sleep 60"
             }
         }
         stage("Third Stage") {
