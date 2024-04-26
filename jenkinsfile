@@ -10,21 +10,37 @@ pipeline {
         disableConcurrentBuilds()
         timeout(time: 2, unit: 'MINUTES')
     }
+    triggers { pollSCM('*/58 * * * *') }
+    parameters {
+        string(name: 'COMPONENT', defaultValue: 'mongodb', description: 'Enter the component')
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+    }
+    tools {
+        maven 'mvn-395' 
+    }
     stages {
         stage("First Stage") {
             steps {
                 sh "echo Hello world"
                 sh "echo ${ENV_URL}"
+                sh "mvn --version"
+                sh "uname -a"
             }
         }
         stage("Second Stage") {
              environment {
                 ENV_URL = "stage.google.com"          // Local Variable :Scope of the local variable is confined to this stage only
             }
+            tools {
+                maven 'mvn-390' 
+            }
             steps {
                 sh "echo Welcome world! We will do CICD tomorrow"
                 sh "echo ${ENV_URL}"
                 sh "env"
+                sh "mvn --version"
                 sh "sleep 60"
             }
         }
@@ -32,6 +48,28 @@ pipeline {
             steps {
                 sh "echo Weclome world!"
                 
+            }
+        }
+        stage("Testing") {
+            parallel {
+                stage("Unit Testing") {
+                    steps {
+                        sh "echo Unit Testing In Progress"
+                        sh "sleep 60"                
+                    }
+                }
+                stage("Integration Testing") {
+                    steps {
+                        sh "echo Integration Testing In Progress"
+                        sh "sleep 60"                
+                    }
+                }
+                stage("Functional Testing") {
+                    steps {
+                        sh "echo Functional Testing In Progress"
+                        sh "sleep 60"                
+                    }
+                }
             }
         }
     }
