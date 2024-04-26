@@ -6,6 +6,11 @@ pipeline {
                 echo "Hello world"
             }
         }
+        stage("Second Stage") {
+            steps {
+                echo "Welcome world! We will do CICD tomorrow"
+            }
+        }
     }
 
 }
