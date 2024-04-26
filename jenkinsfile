@@ -8,6 +8,7 @@ pipeline {
         stage("First Stage") {
             steps {
                 echo "Hello world"
+                echo ${ENV_URL}
             }
         }
         stage("Second Stage") {
