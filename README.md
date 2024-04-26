@@ -2,6 +2,8 @@
 
 We are going to place the learning of our Jenkins starting from basics to advanced in this repositor
 
+### Go to the Documentation >> Understand the tool and then adopt the SYNTAX
+
 # Backlog 
 
 ```
