@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'ws'
+        // label 'ws'
     }
     environment {
         ENV_URL = "pipeline.google.com"                          // Global Variable : All the stages of the pipeline can inherit this
