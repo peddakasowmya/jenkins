@@ -18,6 +18,7 @@ pipeline {
             steps {
                 sh "echo Welcome world! We will do CICD tomorrow"
                 sh "echo ${ENV_URL}"
+                sh "env"
             }
         }
         stage("Third Stage") {
