@@ -38,7 +38,7 @@ pipeline {
                 sh "echo ${ENV_URL}"
                 sh "env"
                // sh "mvn --version"
-                sh "sleep 60"
+                sh "sleep 1"
             }
         }
         stage("Third Stage") {
