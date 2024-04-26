@@ -18,9 +18,7 @@ pipeline {
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')      //toggle btwn yes or no
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something') // to choose among options
     }
-    tools {
-        maven "mvn-395" 
-    }
+   
     stages {
         stage("First Stage") {
             steps {
@@ -34,9 +32,7 @@ pipeline {
              environment {
                 ENV_URL = "stage.google.com"          // Local Variable :Scope of the local variable is confined to this stage only
             }
-            tools {
-                maven "mvn-390" 
-            }
+           
             steps {
                 sh "echo Welcome world! We will do CICD tomorrow"
                 sh "echo ${ENV_URL}"
