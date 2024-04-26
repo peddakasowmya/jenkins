@@ -19,7 +19,7 @@ pipeline {
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
     }
     tools {
-        maven 'mvn-395' 
+//        maven 'mvn-395' 
     }
     stages {
         stage("First Stage") {
@@ -35,7 +35,7 @@ pipeline {
                 ENV_URL = "stage.google.com"                // Local Variable :Scope of the local variable is confined to this stage only
             } 
             tools {
-                maven 'mvn-390' 
+//                maven 'mvn-390' 
             }
             steps {
                 sh "echo We will do CICD Tomorrow using Jenkins"
