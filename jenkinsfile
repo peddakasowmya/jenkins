@@ -19,7 +19,7 @@ pipeline {
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something') // to choose among options
     }
     tools {
-        maven 'mvn-395' 
+        maven 'mvn-390' 
     }
     stages {
         stage("First Stage") {
