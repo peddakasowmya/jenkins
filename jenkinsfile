@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh "echo Hello world"
                 sh "echo ${ENV_URL}"
-                sh "mvn --version"
+              //  sh "mvn --version"
                 sh "uname -a"
             }
         }
@@ -37,7 +37,7 @@ pipeline {
                 sh "echo Welcome world! We will do CICD tomorrow"
                 sh "echo ${ENV_URL}"
                 sh "env"
-                sh "mvn --version"
+               // sh "mvn --version"
                 sh "sleep 60"
             }
         }
