@@ -1,6 +1,9 @@
 
 pipeline {
-    agent any
+    //agent any
+    agent {
+        label 'ws'
+    }
     environment {
         ENV_URL = "pipeline.google.com"          // Global Variable : All the stages of the pipeline can inherit this
         SSHCRED = credentials('SSHCRED')        // as this stores the username and pwd as secret, we can use SSHCRED_USR & SSHCRED_PWD to get those values
