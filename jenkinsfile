@@ -10,7 +10,8 @@ pipeline {
         disableConcurrentBuilds()
         timeout(time: 2, unit: 'MINUTES')
     }
-    triggers { pollSCM('*/58 * * * *') }
+    triggers { pollSCM('*/58 * * * *') }  // PollSCM we can schedule some time --> it goes and achecks the Git repo that we have mentioned 
+                                          //   --> if there are any commits on the repo, then only the job will run
 
     parameters {
         string(name: 'COMPONENT', defaultValue: 'mongodb', description: 'Enter the component')
@@ -19,9 +20,9 @@ pipeline {
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something') // to choose among options
     }
     tools {
-        maven 'mvn-396' 
+        maven 'mvn-396'  // to install the packages
     }
-   
+    
     stages {
         stage("First Stage") {
             steps {

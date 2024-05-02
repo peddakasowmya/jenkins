@@ -66,3 +66,10 @@ A plug-in is nothing but a feature, if you want a feature, install that plugin.
 
     *   Adding the node details from the Jenkins-UI 
     *   From the node itself, we can run the JNLP Commands  ( AutoScaling ----> startupScript ( jnlp command) ) 
+
+### Poll SCM
+ PollSCM we can schedule some time --> it goes and achecks the Git repo that we have mentioned 
+ --> if there are any commits on the repo, then only the job will run
+
+
+### 
