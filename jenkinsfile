@@ -1,6 +1,6 @@
 
 pipeline {
-    //agent any
+    //agent any                     // This will run on any node that is available, if no node available then it runs on the JNEKINS
     agent {
         label 'ws'
     }
