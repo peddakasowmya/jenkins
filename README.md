@@ -56,7 +56,7 @@ A plug-in is nothing but a feature, if you want a feature, install that plugin.
 
 ### Can we configure warnings in jenkins for the nodes, if any of the nodes of the controller (jenkins) utilize 80% of the disk ?
     *   Yes, that's doable
-
+ 
 ### If the response time between JENKINS & the agent is not acceptable or if the roundTrip is above the unaccpeted values, can we mark the agent as Offline ? yes
     *   This monitors the round trip network response time from the controller to the agent, and if it goes above a threshold repeatedly, it disconnects the agent.
 
